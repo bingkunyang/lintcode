@@ -1,5 +1,8 @@
 public class Solution {
     public ListNode deleteDuplicates(ListNode head) {
+    
+    // judge if the list is empty or not
+    
         if (head == null)
             return head;
 
@@ -7,9 +10,14 @@ public class Solution {
         dummyNode.next = head;
         ListNode p = dummyNode;
         
+    // judge if the two node following the pointer is null or not    
+    
         while(p.next != null && p.next.next != null) {
             if (p.next.val == p.next.next.val) {
                 int val = p.next.val;
+                
+    // judge if the next node is equal to "val" or not
+                
                 while (p.next != null && p.next.val == val) {
                     p.next = p.next.next;
                 }
